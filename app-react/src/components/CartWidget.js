@@ -1,10 +1,10 @@
 import React from "react";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Cart from "../images/cart.jpg";
 
 function CartWidget () {
     return (
         <div>
-            <ShoppingCartIcon/>
+            <img src={Cart} width="40" height="40"alt="..." />
         </div>
         )
     

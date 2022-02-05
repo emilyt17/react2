@@ -1,6 +1,6 @@
 import React from "react";
 import CartWidget from "./CartWidget.js";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 
 export default function Menu() {
    return ( 
@@ -26,7 +26,7 @@ export default function Menu() {
 						<a className="nav-link active" aria-current="page" href="#">Sale</a>
 					</li>
 					<li className="nav-item">
-					
+					<CartWidget/>
 					</li>
 
 				</ul>
