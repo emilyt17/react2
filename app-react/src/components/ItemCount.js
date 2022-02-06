@@ -14,7 +14,9 @@ function ItemCount ({stock, initial, onAdd}) {
         setCont(cont - 1);
         }
     };
-
+    function addCart(){
+        onAdd(cont);
+    }
 
 
     return (
@@ -23,7 +25,7 @@ function ItemCount ({stock, initial, onAdd}) {
             <h5>{cont}</h5>
             <button onClick={resItem}> - </button>
             <br/>
-            <button onClick={onAdd}>Agregar al carrito</button>
+            <button onClick={addCart}>Agregar al carrito</button>
         </div>
         )
     
