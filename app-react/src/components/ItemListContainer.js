@@ -1,30 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ItemCount from "./ItemCount"
+import { getProduct } from "../api/api";
+import ItemList from "./ItemList";
 
-function ItemListContainer ({img, titles, description, price }) {
+function ItemListContainer () {
+  const [products, setProducts] = useState([])
+
+  useEffect(() =>{
+    getProduct().then((products) =>{
+      console.log(products);
+      setProducts(products);
+    })
+
+  },[]);
+
 
   function addItem(cont){
     console.log(cont)
 
   }
     return (
-<div className="row row-cols-1 row-cols-md-3 g-4 ">
-  <div className="col p-3 mb-5 mt-4">
-    <div className="card h-100">
-      <img src={img} className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">{titles}</h5>
-        <p className="card-text">{description}</p>
-      </div>
-      <div className="card-footer">
-        <small className="text-muted">{price} </small>
         <div>
+          {products.length > 0 ? <ItemList products={products} /> : <p>...</p> }
           <ItemCount stock ={5} initial={1} onAdd={addItem} />
         </div>
-      </div>
-    </div>
-  </div>
-</div>
         )
     
 }
