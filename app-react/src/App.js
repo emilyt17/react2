@@ -1,17 +1,33 @@
 import './App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Switch,Route} from 'react-router-dom';
 import Menu from './components/Menu';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   return (
+    <BrowserRouter>
     <div >
-      <Router>
-      <Menu/>
-      </Router>
-      <ItemListContainer />
+      <header> 
+        
+          
+         <Menu/>
+        
+      </header>
+      
+      <main>
+      <Routes>
+      <Route 
+      path ="/" 
+      element ={<ItemListContainer />}
+      />
+      
+      </Routes>
+      <ItemDetailContainer/>
+      </main>
       
     </div>
+    </BrowserRouter>
   );
 }
 
